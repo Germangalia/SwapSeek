@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  cron:
+    # Build the Docker image using the Dockerfile in the current directory
+    build: .
+    
+    # Name the container for easier reference
+    container_name: node-cron-container
+    
+    # Restart the container automatically unless it is manually stopped
+    restart: unless-stopped
+    
+    # Set environment variables
+    environment:
+      - NODE_ENV=production
+    
+    # Mount the current directory to /app in the container for development
+    volumes:
+      - .:/app
