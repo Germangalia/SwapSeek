@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 # Run the cron script
-CMD ["node", "cron.js"]
+CMD ["node", "src/cron/arbitrage-job.ts"]
